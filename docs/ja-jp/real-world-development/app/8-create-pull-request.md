@@ -23,7 +23,7 @@ lastUpdated: 2026-09-17
 
 ## Agent Merge の概要
 
-**Agent Merge** を使うと、Copilot app で pull request をマージするまでの最終工程を自動化できます。有効にすると、アプリのセッションが pull request を読み取り、失敗した CI チェックの修正、レビューコメントへの対応、必要に応じたリベースなど、マージを妨げる問題に対処します。そして GitHub で許可され次第、pull request をマージします。バックグラウンドで動作し、アプリを再起動しても継続し、pull request がマージされると自動的に無効になります。
+**Agent Merge** を使うと、GitHub Copilot app で pull request をマージするまでの最終工程を自動化できます。有効にすると、アプリのセッションが pull request を読み取り、失敗した継続的インテグレーション (CI) チェックの修正、レビューコメントへの対応、必要に応じたリベースなど、マージを妨げる問題に対処します。そして GitHub で許可され次第、pull request をマージします。バックグラウンドで動作し、アプリを再起動しても継続し、pull request がマージされると自動的に無効になります。
 
 ここまでは、自分で **Merge pull request** を選択していました。Agent Merge に任せることもできますが、コードの編集やマージには引き続き明示的な承認が必要です。マージを許可する前に、許可される操作と作業内容をレビューしてください。
 
@@ -33,8 +33,8 @@ lastUpdated: 2026-09-17
 
 1. エージェントピッカーで **Default agent** を選択します。
 2. **Create PR** の横にあるドロップダウンを選択します。
-3. **Agent merge** を選択します。ボタンが **Agent merge** に変わります。
-4. **Agent merge** を選択し、Agent Merge のプロセスを開始します。
+3. **Agent Merge** を選択します。ボタンが **Agent Merge** に変わります。
+4. **Agent Merge** ボタンを選択してプロセスを開始します。ドロップダウン項目を選んだだけでは開始されません。
 
 Agent Merge のプロセスが開始され、次の処理を行います。
 
@@ -47,8 +47,16 @@ Agent Merge のプロセスが開始され、次の処理を行います。
 
 すべてが成功したら Agent Merge が PR もマージするように設定します。
 
-5. **Agent merge** の横にあるドロップダウンを選択します。
-6. **Merge pull request** の横にチェックが付いていることを確認します。
+5. マージを許可する前に、PR の差分と検証の証拠を確認します。
+6. **Agent Merge** の横にあるドロップダウンを選択します。
+7. **Merge pull request** の横にチェックが付いていることを確認します。
+8. 次のように明示的にエージェントへマージを依頼します。
+
+    ```plaintext
+    Merge the PR once all required checks and approvals pass. Do not bypass repository protections.
+    ```
+
+9. 進捗を確認し、報告された阻害要因を解決します。続行前に PR の状態が **Merged** であることを確認してください。マージ権限が有効になっていることや、エージェントが実行中であることだけでは、マージ完了の確認になりません。
 
 > [!IMPORTANT]
 > Agent Merge は、リポジトリの保護や権限不足を回避しません。続行前にそれらの阻害要因を解消してください。

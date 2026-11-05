@@ -634,7 +634,11 @@ export default defineConfig({
                   label: '10. Wrap-up and next steps',
                   link: '/real-world-development/cli/10-review/',
                   translations: {
+                    'es-ES': '10. Conclusiones y próximos pasos',
+                    'ja-JP': '10. まとめと次のステップ',
                     'ko-KR': '10. 마무리 및 다음 단계',
+                    'pt-BR': '10. Encerramento e próximos passos',
+                    'zh-CN': '10. 总结与后续步骤',
                   },
                 },
                 {
@@ -784,7 +788,11 @@ export default defineConfig({
                   label: '10. Wrap-up and next steps',
                   link: '/real-world-development/app/10-review/',
                   translations: {
+                    'es-ES': '10. Conclusiones y próximos pasos',
+                    'ja-JP': '10. まとめと次のステップ',
                     'ko-KR': '10. 마무리 및 다음 단계',
+                    'pt-BR': '10. Encerramento e próximos passos',
+                    'zh-CN': '10. 总结与后续步骤',
                   },
                 },
                 {
